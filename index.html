@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Web Toolkit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background: #0a0a0a; 
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 4rem;
+    }
+    .demos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .demo-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 2rem;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .demo-card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-5px);
+      border-color: rgba(102, 126, 234, 0.5);
+    }
+    .demo-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .demo-card p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .demo-card .tag {
+      display: inline-block;
+      background: rgba(102, 126, 234, 0.2);
+      color: #667eea;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      margin-top: 1rem;
+    }
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.4);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Creative Web Toolkit</h1>
+    <p class="subtitle">Bikin website dengan efek visual yang gak biasa</p>
+    
+    <div class="demos">
+      <a href="/demos/gravity/" class="demo-card">
+        <h3>🌊 Anti-Gravity</h3>
+        <p>Partikel melayang dengan physics simulation. Interaktif: gerakin mouse, klik buat tambah partikel.</p>
+        <span class="tag">Three.js + Physics</span>
+      </a>
+      
+      <a href="/demos/3d-scroll/" class="demo-card">
+        <h3>🎭 3D Scroll</h3>
+        <p>Scroll-driven 3D scenes. Objek berubah seiring scroll.</p>
+        <span class="tag">Three.js + GSAP</span>
+      </a>
+      
+      <a href="/demos/aesthetic/" class="demo-card">
+        <h3>✨ Aesthetic</h3>
+        <p>Glitch effects, distorted text, abstract visuals.</p>
+        <span class="tag">WebGL + Shaders</span>
+      </a>
+      
+      <a href="/demos/motion/" class="demo-card">
+        <h3>💫 Motion</h3>
+        <p>Smooth transitions, parallax, kinetic typography.</p>
+        <span class="tag">GSAP + Framer Motion</span>
+      </a>
+      
+      <a href="/demos/persona/" class="demo-card">
+        <h3>🎮 Persona Style</h3>
+        <p>Menu-style navigation dengan sound effects.</p>
+        <span class="tag">Vanilla JS + CSS</span>
+      </a>
+    </div>
+    
+    <div class="footer">
+      <p>Built with ❤️ by Bang Sapri for Juni</p>
+    </div>
+  </div>
+</body>
+</html>

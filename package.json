@@ -1,0 +1,31 @@
+{
+  "name": "creative-web-toolkit",
+  "version": "0.1.0",
+  "description": "Toolkit untuk bikin website kreatif: anti-gravity, 3D, motion, aesthetic effects",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "demo:gravity": "vite --config demos/gravity/vite.config.js",
+    "demo:3d-scroll": "vite --config demos/3d-scroll/vite.config.js",
+    "demo:aesthetic": "vite --config demos/aesthetic/vite.config.js"
+  },
+  "dependencies": {
+    "three": "^0.170.0",
+    "@react-three/fiber": "^8.17.0",
+    "@react-three/drei": "^9.114.0",
+    "gsap": "^3.12.0",
+    "framer-motion": "^11.0.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "lenis": "^1.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0"
+  }
+}

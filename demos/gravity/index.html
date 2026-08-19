@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anti-Gravity Demo | Creative Web Toolkit</title>
+  <script type="module" src="./main.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background: #0a0a0a; 
+      overflow: hidden;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    #canvas-container { width: 100vw; height: 100vh; }
+    .overlay {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .overlay h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .overlay p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .hint {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.4);
+      font-size: 0.9rem;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div id="canvas-container"></div>
+  <div class="overlay">
+    <h1>ANTI-GRAVITY</h1>
+    <p>Move your mouse to interact</p>
+  </div>
+  <div class="hint">Click to add more particles • Scroll to zoom</div>
+</body>
+</html>
