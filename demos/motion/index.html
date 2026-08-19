@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motion Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0a0a; font-family: 'Space Grotesk', sans-serif; color: white; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+    
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: 8rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(100px);
+      animation: slideUp 1s ease forwards;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.6);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideUp 1s ease 0.3s forwards;
+    }
+    @keyframes slideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Floating elements */
+    .floating {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.5;
+      animation: float 10s ease-in-out infinite;
+    }
+    .floating:nth-child(1) {
+      width: 300px; height: 300px;
+      background: #667eea;
+      top: 10%; left: 10%;
+      animation-delay: 0s;
+    }
+    .floating:nth-child(2) {
+      width: 200px; height: 200px;
+      background: #764ba2;
+      top: 60%; right: 10%;
+      animation-delay: -3s;
+    }
+    .floating:nth-child(3) {
+      width: 250px; height: 250px;
+      background: #f093fb;
+      bottom: 10%; left: 30%;
+      animation-delay: -6s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(30px, -30px) scale(1.1); }
+      50% { transform: translate(-20px, 20px) scale(0.9); }
+      75% { transform: translate(20px, 10px) scale(1.05); }
+    }
+    
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 4rem 0;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.6s ease;
+    }
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(102, 126, 234, 0.5);
+    }
+    .card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .card p { color: rgba(255,255,255,0.6); line-height: 1.6; }
+    
+    /* Text reveal */
+    .reveal-text {
+      font-size: 4rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 4rem 0;
+    }
+    .reveal-text span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100px) rotateX(-90deg);
+      transition: all 0.6s ease;
+    }
+    .reveal-text.visible span {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+    
+    /* Magnetic button */
+    .magnetic-btn {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .magnetic-btn:hover { transform: scale(1.05); }
+    
+    .center { text-align: center; padding: 4rem 0; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="floating"></div>
+    <div class="floating"></div>
+    <div class="floating"></div>
+    <h1>MOTION</h1>
+    <p>Smooth transitions & kinetic typography</p>
+  </div>
+  
+  <div class="container">
+    <div class="reveal-text" data-text="ANIMATE EVERYTHING">
+      <span>A</span><span>N</span><span>I</span><span>M</span><span>A</span><span>T</span><span>E</span>
+      <span>&nbsp;</span>
+      <span>E</span><span>V</span><span>E</span><span>R</span><span>Y</span><span>T</span><span>H</span><span>I</span><span>N</span><span>G</span>
+    </div>
+    
+    <div class="cards">
+      <div class="card">
+        <h3>✨ Parallax</h3>
+        <p>Layer bergerak dengan kecepatan berbeda saat scroll. Ciptakan depth dan dimensi.</p>
+      </div>
+      <div class="card">
+        <h3>💫 Kinetic Typography</h3>
+        <p>Teks bergerak, berubah bentuk, dan berinteraksi dengan mouse.</p>
+      </div>
+      <div class="card">
+        <h3>🎭 Morphing</h3>
+        <p>Objek berubah bentuk secara smooth. Dari circle ke square ke custom shape.</p>
+      </div>
+      <div class="card">
+        <h3>🌊 Easing</h3>
+        <p>Animasi dengan timing yang natural. Elastic, bounce, spring effects.</p>
+      </div>
+      <div class="card">
+        <h3>🖱️ Magnetic</h3>
+        <p>Elemen tertarik ke mouse. Hover effects yang interactive.</p>
+      </div>
+      <div class="card">
+        <h3>📜 Scroll-driven</h3>
+        <p>Animasi yang dikontrol oleh scroll position. Progress-based transitions.</p>
+      </div>
+    </div>
+    
+    <div class="center">
+      <button class="magnetic-btn">Try Me</button>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

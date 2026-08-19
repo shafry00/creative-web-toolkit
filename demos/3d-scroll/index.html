@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Scroll Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0a0a; font-family: 'Space Grotesk', sans-serif; }
+    #canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    .scroll-container { position: relative; z-index: 1; }
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    .section h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+    .section.visible h2 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 500px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease 0.2s;
+    }
+    .section.visible p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      z-index: 100;
+      transition: width 0.1s;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progress"></div>
+  <div id="canvas-container"></div>
+  
+  <div class="scroll-container">
+    <div class="section" data-section="0">
+      <div>
+        <h2>SCROLL DOWN</h2>
+        <p>Watch the 3D scene transform as you scroll</p>
+      </div>
+    </div>
+    <div class="section" data-section="1">
+      <div>
+        <h2>MORPHING</h2>
+        <p>Objects change shape with scroll position</p>
+      </div>
+    </div>
+    <div class="section" data-section="2">
+      <div>
+        <h2>COLOR SHIFT</h2>
+        <p>Colors evolve through the journey</p>
+      </div>
+    </div>
+    <div class="section" data-section="3">
+      <div>
+        <h2>EXPLODE</h2>
+        <p>Particles scatter and reform</p>
+      </div>
+    </div>
+    <div class="section" data-section="4">
+      <div>
+        <h2>FINALE</h2>
+        <p>Everything comes together</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
